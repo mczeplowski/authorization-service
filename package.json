@@ -19,6 +19,7 @@
   "homepage": "https://github.com/mczeplowski/authorization-service#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "jsonwebtoken": "^8.5.0",
     "mongoose": "^5.4.18",
     "nconf": "^0.10.0",

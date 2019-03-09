@@ -10,9 +10,10 @@ export default class App {
     this.mongo = new Mongo(databaseUrl);
 
     const port = nconf.get('api:port') || 3000;
+    const sessionSecret = nconf.get('session:secret') || 'secret';
     const userRepository = new UserRepository();
     const passportOauthGoogleStrategy = new PassportOauthGoogleStrategy(userRepository);
-    this.server = new Server(port, passportOauthGoogleStrategy);
+    this.server = new Server(port, sessionSecret, passportOauthGoogleStrategy);
   }
 
   async run() {
